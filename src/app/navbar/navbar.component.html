@@ -1,0 +1,22 @@
+<div>
+  <nav class="navbar navbar-inverse" >
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Angular Blog App</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a [routerLink]="['/posts']">Home</a></li>
+        <li *ngIf="check==true"><a [routerLink]="['/addnew']">Add Post</a></li>
+        <li><a [routerLink]="['/posts']">See All</a></li>
+        <li *ngIf="check==true"><a [routerLink]="['/myposts']">My Posts</a></li>
+        <li *ngIf="check==true"><a [routerLink]="['/myfavs']">My Favourites</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li *ngIf="check==false"><a [routerLink]="['/login']"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li *ngIf="check==true"><a [routerLink]="['/login']" (click)="onLogOut()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<router-outlet></router-outlet>

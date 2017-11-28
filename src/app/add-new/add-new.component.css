@@ -1,0 +1,25 @@
+textarea{
+  white-space: pre-wrap;
+}
+form {
+  width:100%;
+}
+input, textarea {
+  display:block;
+  width:100%;
+  padding:10px;
+  font-size:1.1em;
+}
+
+#msgP{
+  color: red;
+  position: absolute;
+  left: 400px;
+
+}
+
+#msg{
+  margin-bottom: 20px;
+
+}
+

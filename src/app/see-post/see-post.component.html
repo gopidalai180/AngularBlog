@@ -1,0 +1,64 @@
+
+<div class="post" *ngIf="post">
+
+  <div *ngIf="activeUser" class="top-right" >
+    <button *ngIf="post.userId!=activeUser.id" id="btn"  type="button" title="Mark As Favourite" class="btn glyphicon glyphicon-star" (click)="favourite()"></button>
+    <!--<button id="btn1" *ngIf="post.userId==activeUser.id && markedFavourite==false" type="button" title="Remove from Favourites" class="btn glyphicon glyphicon-star-empty" (click)="unfavourite()"></button>-->
+    <button *ngIf="post.userId==activeUser.id " type="button" class="btn btn-success" (click)="updatePost()">Update</button>
+    <button *ngIf="post.userId==activeUser.id" type="button" class="btn btn-danger" (click)="deletePost(post)">Delete</button>
+  </div>
+
+  <h2>{{post.title}}</h2>
+
+  <cite>by {{post.author}} on {{post.date | date}}</cite>
+
+  <div class="post-body">
+    <p>
+      {{post.desc}}
+    </p>
+  </div>
+</div>
+
+<div class="container" *ngIf="editable==true">
+
+  <form class="form-horizontal" (submit)="onSubmit(name.value,description.value,category.value)" novalidate>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="title">Title:</label>
+      <div class="col-sm-10">
+        <input class="form-control" id="title" placeholder="Enter Title" name="title" #name required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="description">Description:</label>
+      <div class="col-sm-10">
+        <textarea type="text" class="form-control" id="description" placeholder="Enter Description" name="description" #description rows="10" required></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="sel1">Category:</label>
+      <div class="col-sm-10">
+
+        <select class="form-control" id="sel1" #category>
+          <option>Anime</option>
+          <option>Sports</option>
+          <option>Movies</option>
+          <option>Ambiguous</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="author">Author:</label>
+      <div class="col-sm-10">
+        <p class="form-control" id="author" required>{{activeUser.id}}</p>
+      </div>
+    </div>
+    <div  id="msg" class="form-group" *ngIf="msg==true">
+      <p id="msgP">Title and Description Cannot be Empty</p>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>

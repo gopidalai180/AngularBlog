@@ -1,0 +1,25 @@
+<div class="category">
+  <label for="sel1"><h4>Category: </h4></label>
+  <select  id="sel1" [(ngModel)]="category" (change)="filter()">
+    <option>All Categories</option>
+    <option>Anime</option>
+    <option>Movies</option>
+    <option>Sports</option>
+    <option>Ambiguous</option>
+  </select>
+</div>
+<div class="content">
+  <div  class="container" >
+
+    <div class="row">
+      <ul class="post-grid" *ngFor="let post of filterdposts">
+
+        <li class="col s-4" [routerLink]="['/posts',post.id]"  >
+          <h2>{{post.title}}</h2>
+          <p>{{post.desc | limitTo: 70}}</p>
+          <h4 class="pull-right" id="author">- {{post.author}}</h4>
+        </li>
+    </ul>
+    </div>
+  </div>
+</div>

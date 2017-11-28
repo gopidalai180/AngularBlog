@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>LogIn</h2>
+  <form class="form-horizontal" (submit)="onLogin(userId.value,pwd.value)">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="userId">UserId:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="userId" placeholder="Enter UserId" name="userId" #userId>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Password:</label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" #pwd>
+      </div>
+    </div>
+    <div id="msg" class="form-group" *ngIf="message==true">
+      <p>Invalid Username/Password</p>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default">LogIn</button>
+      </div>
+    </div>
+  </form>
+</div>

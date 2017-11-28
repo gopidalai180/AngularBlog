@@ -1,0 +1,13 @@
+<div class="content">
+  <div  class="container" >
+    <div class="row" *ngFor="let post of posts">
+      <ul class="post-grid">
+        <li class="col s-4" [routerLink]="['/posts',post.id]" *ngIf="this.activeUser.favourites.includes(post.id)">
+          <h2>{{post.title}}</h2>
+          <p>{{post.desc | limitTo: 70}}</p>
+          <h4 class="pull-right" id="author">- {{post.author}}</h4>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

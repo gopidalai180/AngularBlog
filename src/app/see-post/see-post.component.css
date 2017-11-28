@@ -1,0 +1,44 @@
+.post-body{
+  white-space: pre-wrap;
+}
+.post{
+  margin-left:30px;
+}
+h2{
+  color: #3A8BAB;
+}
+.post{
+  text-align: center;
+}
+.top-right{
+  position: absolute;
+  top:80px;
+  right: 0;
+  padding-right: 20px;
+}
+cite{
+  text-align: center;
+}
+#btn{
+  background-color:white ;
+  text-align: center;
+  color: gold;
+  font-size: 25px;
+}
+#btn1{
+  background-color:white ;
+  text-align: center;
+  color: gold;
+  font-size: 25px;
+}
+#msgP{
+  color: red;
+  position: absolute;
+  left: 400px;
+
+}
+
+#msg{
+  margin-bottom: 20px;
+
+}
